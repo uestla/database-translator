@@ -16,34 +16,6 @@ use Nette\Caching\Cache;
 use Nette\Caching\IStorage;
 use Nette\Database\Context;
 
-/*
-
-SET NAMES utf8;
-SET foreign_key_checks = 0;
-SET time_zone = 'SYSTEM';
-SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
-
-DROP TABLE IF EXISTS `lang`;
-CREATE TABLE `lang` (
-  `shortcut` varchar(2) COLLATE utf8_czech_ci NOT NULL,
-  `name` varchar(255) COLLATE utf8_czech_ci NOT NULL,
-  PRIMARY KEY (`shortcut`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci;
-
-
-DROP TABLE IF EXISTS `translation`;
-CREATE TABLE `translation` (
-  `idf` varchar(255) COLLATE utf8_czech_ci NOT NULL COMMENT 'translation identifier',
-  `lang` varchar(2) COLLATE utf8_czech_ci NOT NULL,
-  `amount_type` enum('1','2','3') COLLATE utf8_czech_ci NOT NULL DEFAULT '1' COMMENT '[1] => [one], [2] => [two, three, four], [3] => [rest...]',
-  `translation` varchar(255) COLLATE utf8_czech_ci NOT NULL,
-  PRIMARY KEY (`idf`,`lang`,`amount_type`),
-  KEY `lang` (`lang`),
-  CONSTRAINT `translation_ibfk_1` FOREIGN KEY (`lang`) REFERENCES `lang` (`shortcut`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci;
-
- */
-
 
 class DatabaseTranslator implements Nette\Localization\ITranslator
 {
